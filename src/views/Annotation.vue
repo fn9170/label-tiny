@@ -246,6 +246,7 @@ export default {
         this.SET_CURRENT_IMAGE(image)
         const response = await this.$api.getAnnotations(image.id)
         this.SET_CURRENT_ANNOTATIONS(response.data)
+        this.updateImageAnnotationCount()
       } catch (error) {
         this.$message.error('加载标注数据失败')
       }
@@ -261,21 +262,39 @@ export default {
       this.SET_SELECTED_ANNOTATION(annotation)
     },
 
+    // 更新图片列表中的标注计数
+    updateImageAnnotationCount() {
+      if (!this.currentImage) return
+      
+      const imageIndex = this.imageList.findIndex(img => img.id === this.currentImage.id)
+      if (imageIndex >= 0) {
+        const updatedImageList = [...this.imageList]
+        updatedImageList[imageIndex] = {
+          ...updatedImageList[imageIndex],
+          annotationCount: this.currentAnnotations.length
+        }
+        this.$store.commit('SET_IMAGE_LIST', updatedImageList)
+      }
+    },
+
     // 处理标注添加
     handleAnnotationAdded(annotation) {
       this.ADD_ANNOTATION(annotation)
+      this.updateImageAnnotationCount()
       this.saveCurrentAnnotations()
     },
 
     // 处理标注更新
     handleAnnotationUpdated({ index, annotation }) {
       this.UPDATE_ANNOTATION({ index, annotation })
+      this.updateImageAnnotationCount()
       this.saveCurrentAnnotations()
     },
 
     // 处理标注删除
     handleAnnotationDeleted(index) {
       this.DELETE_ANNOTATION(index)
+      this.updateImageAnnotationCount()
       this.saveCurrentAnnotations()
     },
 
@@ -287,6 +306,7 @@ export default {
     // 删除标注
     deleteAnnotation(index) {
       this.DELETE_ANNOTATION(index)
+      this.updateImageAnnotationCount()
       this.saveCurrentAnnotations()
     },
 
@@ -304,6 +324,7 @@ export default {
     // 重置标注
     resetAnnotations() {
       this.SET_CURRENT_ANNOTATIONS([])
+      this.updateImageAnnotationCount()
       this.saveCurrentAnnotations()
     },
 
