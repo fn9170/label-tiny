@@ -465,6 +465,7 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 
 .right-panel {
@@ -477,6 +478,13 @@ export default {
   border-bottom: 1px solid #e4e7ed;
 }
 
+.panel-section:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 .panel-section h3 {
   margin: 0 0 10px 0;
   font-size: 14px;
@@ -485,8 +493,9 @@ export default {
 }
 
 .image-list {
-  max-height: 300px;
+  flex: 1;
   overflow-y: auto;
+  padding-right: 4px;
 }
 
 .image-item {
@@ -498,6 +507,7 @@ export default {
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s;
+  height: 64px;
 }
 
 .image-item:hover {
@@ -510,11 +520,12 @@ export default {
 }
 
 .image-item img {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   object-fit: cover;
   border-radius: 4px;
   margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .image-info {

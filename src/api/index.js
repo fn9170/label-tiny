@@ -14,7 +14,7 @@ const demoImages = {
   image3: require('@/assets/demo/RdcProject_20250625_170211_Survey_2024-12-10_14-20-18_Swath001_Ch0_200VV_371.136m_2_的_2_split_002.jpg'),
   image4: require('@/assets/demo/RdcProject_20250625_170211_Survey_2024-12-10_14-20-18_Swath001_Ch0_200VV_371.136m_2_的_2_split_003.jpg'),
   image5: require('@/assets/demo/RdcProject_20250625_170211_Survey_2024-12-10_14-20-18_Swath001_Ch0_200VV_371.136m_2_的_2_split_004.jpg')
-};
+}
 
 // 模拟图片数据
 const mockImages = [
@@ -25,24 +25,7 @@ const mockImages = [
     width: 800,
     height: 600,
     createdAt: '2023-01-01T10:00:00Z',
-    annotations: [
-      {
-        id: 1,
-        categoryId: 0,
-        x: 0.2,
-        y: 0.3,
-        width: 0.3,
-        height: 0.4
-      },
-      {
-        id: 2,
-        categoryId: 1,
-        x: 0.5,
-        y: 0.1,
-        width: 0.2,
-        height: 0.3
-      }
-    ]
+    annotations: []
   },
   {
     id: 2,
@@ -51,16 +34,7 @@ const mockImages = [
     width: 800,
     height: 600,
     createdAt: '2023-01-02T10:00:00Z',
-    annotations: [
-      {
-        id: 3,
-        categoryId: 2,
-        x: 0.1,
-        y: 0.1,
-        width: 0.4,
-        height: 0.5
-      }
-    ]
+    annotations: []
   },
   {
     id: 3,
