@@ -4,7 +4,7 @@ A professional image annotation tool based on Vue2, specifically designed for YO
 
 ## 🖼️ Preview
 
-![Application Interface Screenshot](./src/assets/1.png)
+![Application Interface Screenshot](./src/assets/1-en.png)
 
 ## 🌟 Features
 

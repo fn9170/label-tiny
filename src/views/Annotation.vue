@@ -9,28 +9,28 @@
             icon="el-icon-upload"
             @click="showUploadDialog = true"
           >
-            导入图片
+            Import Images
           </el-button>
           <el-button 
             icon="el-icon-download"
             @click="exportYOLO"
             :disabled="!currentImage"
           >
-            导出YOLO
+            Export YOLO
           </el-button>
           <el-button 
             icon="el-icon-refresh"
             @click="resetAnnotations"
             :disabled="!currentImage"
           >
-            重置
+            Reset
           </el-button>
         </el-button-group>
       </div>
       
       <div class="toolbar-center">
         <span class="image-info" v-if="currentImage">
-          {{ currentImage.name }} ({{ currentAnnotations.length }} 个标注)
+          {{ currentImage.name }} ({{ currentAnnotations.length }} annotations)
         </span>
       </div>
       
@@ -41,14 +41,14 @@
             @click="previousImage"
             :disabled="getCurrentImageIndex <= 0"
           >
-            上一张
+            Previous
           </el-button>
           <el-button 
             icon="el-icon-arrow-right"
             @click="nextImage"
             :disabled="getCurrentImageIndex >= imageList.length - 1"
           >
-            下一张
+            Next
           </el-button>
         </el-button-group>
       </div>
@@ -59,7 +59,7 @@
       <!-- 左侧面板 -->
       <div class="left-panel">
         <div class="panel-section">
-          <h3>图片列表</h3>
+          <h3>Image List</h3>
           <div class="image-list">
             <div 
               v-for="image in imageList" 
@@ -71,7 +71,7 @@
               <img :src="image.url" :alt="image.name" />
               <div class="image-info">
                 <div class="image-name">{{ image.name }}</div>
-                <div class="annotation-count">{{ image.annotationCount || 0 }} 个标注</div>
+                <div class="annotation-count">{{ image.annotationCount || 0 }} annotations</div>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@
       <!-- 右侧面板 -->
       <div class="right-panel">
         <div class="panel-section">
-          <h3>标注类别</h3>
+          <h3>Categories</h3>
           <div class="category-list">
             <div 
               v-for="category in categories" 
@@ -113,7 +113,7 @@
         </div>
 
         <div class="panel-section">
-          <h3>标注列表</h3>
+          <h3>Annotations</h3>
           <div class="annotation-list">
             <div 
               v-for="(annotation, index) in currentAnnotations" 
@@ -147,15 +147,15 @@
         </div>
 
         <div class="panel-section">
-          <h3>操作提示</h3>
+          <h3>Shortcuts</h3>
           <div class="help-text">
-            <p><strong>快捷键：</strong></p>
-            <p>1-5: 选择类别</p>
-            <p>Del: 删除选中标注</p>
-            <p>Ctrl+S: 保存</p>
-            <p>Ctrl+Z: 撤销</p>
-            <p>A/D: 上一张/下一张</p>
-            <p>+/-: 缩放</p>
+            <p><strong>Keyboard Shortcuts:</strong></p>
+            <p>1-5: Select category</p>
+            <p>Del: Delete selected annotation</p>
+            <p>Ctrl+S: Save</p>
+            <p>Ctrl+Z: Undo</p>
+            <p>A/D: Previous/Next image</p>
+            <p>+/-: Zoom in/out</p>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@
 
     <!-- 上传对话框 -->
     <el-dialog
-      title="上传图片"
+      title="Upload Images"
       :visible.sync="showUploadDialog"
       width="500px"
     >
@@ -236,7 +236,7 @@ export default {
           await this.selectImage(response.data[0])
         }
       } catch (error) {
-        this.$message.error('加载数据失败')
+        this.$message.error('Failed to load data')
       }
     },
 
@@ -247,7 +247,7 @@ export default {
         const response = await this.$api.getAnnotations(image.id)
         this.SET_CURRENT_ANNOTATIONS(response.data)
       } catch (error) {
-        this.$message.error('加载标注数据失败')
+        this.$message.error('Failed to load annotation data')
       }
     },
 
@@ -297,7 +297,7 @@ export default {
       try {
         await this.$api.saveAnnotations(this.currentImage.id, this.currentAnnotations)
       } catch (error) {
-        this.$message.error('保存失败')
+        this.$message.error('Failed to save')
       }
     },
 
@@ -330,9 +330,9 @@ export default {
         this.$store.commit('SET_IMAGE_LIST', [...this.imageList, response.data])
         await this.selectImage(response.data)
         this.showUploadDialog = false
-        this.$message.success('上传成功')
+        this.$message.success('Upload successful')
       } catch (error) {
-        this.$message.error('上传失败')
+        this.$message.error('Upload failed')
       }
     },
 

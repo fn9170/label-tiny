@@ -3,9 +3,9 @@
     <div class="canvas-controls">
       <div class="zoom-controls">
         <el-button-group size="small">
-          <el-button icon="el-icon-zoom-in" @click="zoomIn">放大</el-button>
-          <el-button icon="el-icon-zoom-out" @click="zoomOut">缩小</el-button>
-          <el-button icon="el-icon-full-screen" @click="resetZoom">重置</el-button>
+          <el-button icon="el-icon-zoom-in" @click="zoomIn">Zoom In</el-button>
+          <el-button icon="el-icon-zoom-out" @click="zoomOut">Zoom Out</el-button>
+          <el-button icon="el-icon-full-screen" @click="resetZoom">Reset</el-button>
         </el-button-group>
         <span class="zoom-info">{{ Math.round(scale * 100) }}%</span>
       </div>
@@ -13,8 +13,8 @@
       <div class="drawing-mode">
         <el-switch
           v-model="drawingMode"
-          active-text="绘制模式"
-          inactive-text="选择模式"
+          active-text="Draw Mode"
+          inactive-text="Select Mode"
           @change="toggleDrawingMode"
         />
       </div>
@@ -117,7 +117,7 @@
     <div v-if="!image" class="no-image-placeholder">
       <div class="placeholder-content">
         <i class="el-icon-picture-outline"></i>
-        <p>请选择或上传图片开始标注</p>
+        <p>Please select or upload an image to start annotation</p>
       </div>
     </div>
   </div>
@@ -493,7 +493,7 @@ export default {
     // 获取类别名称
     getCategoryName(categoryId) {
       const category = this.categories.find(cat => cat.id === categoryId)
-      return category ? category.name : '未知类别'
+      return category ? category.name : 'Unknown Category'
     },
     
     // 获取当前类别名称

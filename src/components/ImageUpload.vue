@@ -17,14 +17,14 @@
         
         <div class="upload-text">
           <p class="upload-title" v-if="!isUploading">
-            拖拽图片到这里，或点击选择文件
+            Drag images here, or click to select files
           </p>
           <p class="upload-title" v-if="isUploading">
-            正在上传...
+            Uploading...
           </p>
           
           <p class="upload-subtitle">
-            支持 JPG、PNG、GIF 格式，文件大小不超过 10MB
+            Supports JPG, PNG, GIF formats, file size up to 10MB
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@
     
     <!-- 预览区域 -->
     <div class="preview-area" v-if="previewImages.length > 0">
-      <h4>预览</h4>
+      <h4>Preview</h4>
       <div class="preview-list">
         <div
           v-for="(image, index) in previewImages"
@@ -74,13 +74,13 @@
       </div>
       
       <div class="upload-actions">
-        <el-button @click="clearPreviews">清空</el-button>
+        <el-button @click="clearPreviews">Clear</el-button>
         <el-button
           type="primary"
           :loading="isUploading"
           @click="startUpload"
         >
-          开始上传
+          Start Upload
         </el-button>
       </div>
     </div>
@@ -209,7 +209,7 @@ export default {
     // 开始上传
     async startUpload() {
       if (this.previewImages.length === 0) {
-        this.$message.warning('请先选择图片')
+        this.$message.warning('Please select images first')
         return
       }
       
@@ -232,13 +232,13 @@ export default {
         }
         
         this.uploadProgress = 100
-        this.$message.success('上传成功')
+        this.$message.success('Upload successful')
         
         // 清空预览
         this.previewImages = []
         
       } catch (error) {
-        this.$message.error('上传失败')
+        this.$message.error('Upload failed')
       } finally {
         this.isUploading = false
         this.uploadProgress = 0

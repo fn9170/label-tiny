@@ -1,39 +1,39 @@
 <template>
   <div class="home">
     <div class="header">
-      <h1>YOLO 图像标注工具</h1>
-      <p>快速、准确、高效的图像标注解决方案</p>
+      <h1>YOLO Image Annotation Tool</h1>
+      <p>Fast, accurate, and efficient image annotation solution</p>
     </div>
     
     <div class="features">
       <div class="feature-card">
         <div class="feature-icon">📷</div>
-        <h3>图像导入</h3>
-        <p>支持拖拽导入，多种图像格式</p>
+        <h3>Image Import</h3>
+        <p>Support drag & drop, multiple image formats</p>
       </div>
       
       <div class="feature-card">
         <div class="feature-icon">🎯</div>
-        <h3>精准标注</h3>
-        <p>支持矩形标注框，可缩放、移动、编辑</p>
+        <h3>Precise Annotation</h3>
+        <p>Support bounding boxes with zoom, move, edit features</p>
       </div>
       
       <div class="feature-card">
         <div class="feature-icon">🏷️</div>
-        <h3>类别管理</h3>
-        <p>灵活的类别配置，支持颜色区分</p>
+        <h3>Category Management</h3>
+        <p>Flexible category configuration with color coding</p>
       </div>
       
       <div class="feature-card">
         <div class="feature-icon">📁</div>
-        <h3>YOLO导出</h3>
-        <p>一键导出YOLO格式标注文件</p>
+        <h3>YOLO Export</h3>
+        <p>One-click export to YOLO format annotation files</p>
       </div>
     </div>
     
     <div class="actions">
       <el-button type="primary" size="large" @click="goToAnnotation">
-        开始标注
+        Start Annotation
       </el-button>
     </div>
   </div>

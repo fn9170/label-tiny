@@ -13,11 +13,11 @@ export default new Vuex.Store({
     currentAnnotations: [],
     // 标注类别列表
     categories: [
-      { id: 0, name: '人', color: '#ff6b6b' },
-      { id: 1, name: '车', color: '#4ecdc4' },
-      { id: 2, name: '动物', color: '#45b7d1' },
-      { id: 3, name: '建筑', color: '#96ceb4' },
-      { id: 4, name: '其他', color: '#feca57' }
+      { id: 0, name: 'Person', color: '#ff6b6b' },
+      { id: 1, name: 'Car', color: '#4ecdc4' },
+      { id: 2, name: 'Animal', color: '#45b7d1' },
+      { id: 3, name: 'Building', color: '#96ceb4' },
+      { id: 4, name: 'Other', color: '#feca57' }
     ],
     // 当前选中的类别
     selectedCategory: 0,
