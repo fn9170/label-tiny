@@ -3,10 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
+  mode: 'development',
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash].js',
+    filename: 'bundle.js',
     clean: true
   },
   module: {
@@ -14,10 +15,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.js$/,
@@ -30,10 +27,14 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[name].[hash][ext]'
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
         }
       }
     ]
@@ -46,16 +47,18 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      'vue$': 'vue/dist/vue.esm.js'
-    }
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, 'src')
+    },
+    extensions: ['.js', '.vue', '.json']
   },
   devServer: {
-    hot: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     port: 8080,
-    open: true,
-    historyApiFallback: true
+    hot: true,
+    open: true
   }
 };
