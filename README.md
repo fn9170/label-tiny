@@ -1,265 +1,261 @@
-# YOLO 图像标注工具
+# YOLO Image Annotation Tool
 
-一个基于 Vue2 的专业图像标注工具，专为 YOLO 格式数据标注而设计。
+A professional image annotation tool based on Vue2, specifically designed for YOLO format data annotation.
 
-## 🖼️ 效果展示
+## 🖼️ Preview
 
-![应用界面截图](./src/assets/1.png)
+![Application Interface Screenshot](./src/assets/1.png)
 
-## 🌟 功能特性
+## 🌟 Features
 
-### 核心功能
-- **图像导入**: 支持拖拽上传，多种图像格式（JPG、PNG、GIF、WebP）
-- **标注绘制**: 直观的矩形标注框绘制
-- **标注编辑**: 支持标注框的移动、缩放、删除
-- **类别管理**: 可配置的标注类别，支持颜色区分
-- **YOLO导出**: 一键导出标准 YOLO 格式标注文件
+### Core Functions
+- **Image Import**: Support drag-and-drop upload, multiple image formats (JPG, PNG, GIF, WebP)
+- **Annotation Drawing**: Intuitive rectangular bounding box drawing
+- **Annotation Editing**: Support moving, resizing, and deleting annotation boxes
+- **Category Management**: Configurable annotation categories with color differentiation
+- **YOLO Export**: One-click export to standard YOLO format annotation files
 
-### 交互体验
-- **快捷键支持**: 丰富的键盘快捷键提升标注效率
-- **缩放查看**: 支持图像缩放以精确标注
-- **多图标注**: 批量处理多张图像
-- **类别高亮**: 不同类别使用不同颜色区分
+### Interactive Experience
+- **Keyboard Shortcuts**: Rich keyboard shortcuts to improve annotation efficiency
+- **Zoom View**: Support image zooming for precise annotation
+- **Multi-image Annotation**: Batch processing of multiple images
+- **Category Highlighting**: Different categories use different colors for distinction
 
-### 技术特性
-- **Vue2 架构**: 基于 Vue2 + Vuex + Vue Router
-- **Mock API**: 完整的 Mock 数据支持，便于开发和演示
-- **模块化设计**: 清晰的项目结构，易于维护和扩展
-- **响应式设计**: 支持不同屏幕尺寸
-- **集成预留**: 预留主系统集成接口
+### Technical Features
+- **Vue2 Architecture**: Based on Vue2 + Vuex + Vue Router
+- **Mock API**: Complete Mock data support for development and demonstration
+- **Modular Design**: Clear project structure, easy to maintain and extend
+- **Responsive Design**: Support for different screen sizes
+- **Integration Ready**: Reserved interfaces for main system integration
 
-## 📦 安装与运行
+## 📦 Installation & Running
 
-### 环境要求
+### Requirements
 - Node.js >= 14.0.0
-- npm 或 yarn
+- npm or yarn
 
-### 安装依赖
+### Install Dependencies
 ```bash
 npm install
 ```
 
-### 开发运行
+### Development Server
 ```bash
 npm run serve
 ```
 
-### 构建生产版本
+### Build for Production
 ```bash
 npm run build
 ```
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-1. **启动项目**
+1. **Start the Project**
    ```bash
    npm run serve
    ```
 
-2. **访问应用**
-   - 打开浏览器访问 `http://localhost:8080`
-   - 系统会自动跳转到标注页面
+2. **Access the Application**
+   - Open browser and visit `http://localhost:8080`
+   - The system will automatically redirect to the annotation page
 
-3. **开始标注**
-   - 点击"导入图片"上传图像
-   - 选择标注类别
-   - 在图像上绘制标注框
-   - 使用快捷键提升效率
+3. **Start Annotating**
+   - Click "Import Images" to upload images
+   - Select annotation category
+   - Draw annotation boxes on the image
+   - Use keyboard shortcuts to improve efficiency
 
-## 📋 使用指南
+## 📋 User Guide
 
-### 基本操作
+### Basic Operations
 
-#### 图像导入
-- **拖拽上传**: 将图片文件拖拽到上传区域
-- **点击选择**: 点击上传区域选择本地图片
-- **支持格式**: JPG、PNG、GIF、WebP
-- **文件大小**: 最大 10MB
+#### Image Import
+- **Drag and Drop**: Drag image files to the upload area
+- **Click to Select**: Click the upload area to select local images
+- **Supported Formats**: JPG, PNG, GIF, WebP
+- **File Size**: Maximum 10MB
 
-#### 标注绘制
-1. 选择标注类别（左侧面板或使用数字键 1-5）
-2. 启用绘制模式
-3. 在图像上按住鼠标左键拖拽绘制标注框
-4. 释放鼠标完成标注
+#### Annotation Drawing
+1. Select annotation category (left panel or use number keys 1-5)
+2. Enable drawing mode
+3. Hold left mouse button and drag on the image to draw annotation box
+4. Release mouse to complete annotation
 
-#### 标注编辑
-- **选择标注**: 点击标注框选中
-- **移动标注**: 拖拽标注框到新位置
-- **调整大小**: 拖拽标注框边缘的调整手柄
-- **删除标注**: 选中后点击删除按钮或按 Delete 键
+#### Annotation Editing
+- **Select Annotation**: Click annotation box to select
+- **Move Annotation**: Drag annotation box to new position
+- **Resize**: Drag the resize handles on the edges of annotation box
+- **Delete Annotation**: Select and click delete button or press Delete key
 
-### 快捷键
+### Keyboard Shortcuts
 
-| 快捷键 | 功能 |
-|--------|------|
-| 1-5 | 选择标注类别 |
-| Delete | 删除选中标注 |
-| Ctrl+S | 保存当前标注 |
-| A | 上一张图片 |
-| D | 下一张图片 |
-| + | 放大图像 |
-| - | 缩小图像 |
+| Shortcut | Function |
+|----------|----------|
+| 1-5 | Select annotation category |
+| Delete | Delete selected annotation |
+| Ctrl+S | Save current annotations |
+| A | Previous image |
+| D | Next image |
+| + | Zoom in |
+| - | Zoom out |
 
-### 工具栏功能
+### Toolbar Functions
 
-#### 主工具栏
-- **导入图片**: 上传新图片
-- **导出YOLO**: 导出当前图片的 YOLO 格式标注
-- **重置**: 清空当前图片的所有标注
-- **上一张/下一张**: 切换图片
+#### Main Toolbar
+- **Import Images**: Upload new images
+- **Export YOLO**: Export current image's annotations in YOLO format
+- **Reset**: Clear all annotations of current image
+- **Previous/Next**: Switch between images
 
-#### 画布控制
-- **放大/缩小**: 调整图像显示大小
-- **重置**: 恢复原始显示比例
-- **绘制/选择模式**: 切换标注模式
+#### Canvas Controls
+- **Zoom In/Out**: Adjust image display size
+- **Reset**: Restore original display ratio
+- **Draw/Select Mode**: Switch annotation mode
 
-## 🏗️ 项目结构
+## 🏗️ Project Structure
 
 ```
 yolo-image-annotation/
-├── public/                 # 静态资源
-│   └── index.html         # 主 HTML 文件
+├── public/                 # Static assets
+│   └── index.html         # Main HTML file
 ├── src/
-│   ├── api/               # API 接口
-│   │   └── index.js       # Mock API 实现
-│   ├── components/        # 可复用组件
-│   │   ├── AnnotationCanvas.vue   # 标注画布组件
-│   │   └── ImageUpload.vue        # 图片上传组件
-│   ├── router/            # 路由配置
+│   ├── api/               # API interfaces
+│   │   └── index.js       # Mock API implementation
+│   ├── components/        # Reusable components
+│   │   ├── AnnotationCanvas.vue   # Annotation canvas component
+│   │   └── ImageUpload.vue        # Image upload component
+│   ├── router/            # Router configuration
 │   │   └── index.js
-│   ├── store/             # Vuex 状态管理
+│   ├── store/             # Vuex state management
 │   │   └── index.js
-│   ├── styles/            # 样式文件
+│   ├── styles/            # Style files
 │   │   └── global.css
-│   ├── utils/             # 工具函数
-│   │   └── yolo.js        # YOLO 格式转换工具
-│   ├── views/             # 页面组件
-│   │   ├── Home.vue       # 首页
-│   │   └── Annotation.vue # 标注页面
-│   ├── App.vue            # 根组件
-│   └── main.js            # 应用入口
-├── package.json           # 项目配置
-├── vue.config.js          # Vue 配置
-└── README.md             # 项目文档
+│   ├── utils/             # Utility functions
+│   │   └── yolo.js        # YOLO format conversion tools
+│   ├── views/             # Page components
+│   │   ├── Home.vue       # Home page
+│   │   └── Annotation.vue # Annotation page
+│   ├── App.vue            # Root component
+│   └── main.js            # Application entry
+├── package.json           # Project configuration
+├── vue.config.js          # Vue configuration
+└── README.md             # Project documentation
 ```
 
-## 💾 数据格式
+## 💾 Data Format
 
-### 标注数据结构
+### Annotation Data Structure
 ```javascript
 {
-  id: 1,              // 标注ID
-  categoryId: 0,      // 类别ID
-  x: 0.2,            // 左上角X坐标（相对坐标 0-1）
-  y: 0.3,            // 左上角Y坐标（相对坐标 0-1）
-  width: 0.3,        // 宽度（相对坐标 0-1）
-  height: 0.4        // 高度（相对坐标 0-1）
+  id: 1,              // Annotation ID
+  categoryId: 0,      // Category ID
+  x: 0.2,            // Top-left X coordinate (relative 0-1)
+  y: 0.3,            // Top-left Y coordinate (relative 0-1)
+  width: 0.3,        // Width (relative 0-1)
+  height: 0.4        // Height (relative 0-1)
 }
 ```
 
-### YOLO 格式输出
+### YOLO Format Output
 ```
 class_id x_center y_center width height
 ```
 
-示例：
+Example:
 ```
 0 0.350000 0.500000 0.300000 0.400000
 1 0.600000 0.250000 0.200000 0.300000
 ```
 
-## 🔧 配置说明
+## 🔧 Configuration
 
-### 类别配置
-在 `src/store/index.js` 中修改类别配置：
+### Category Configuration
+Modify category configuration in `src/store/index.js`:
 
 ```javascript
 categories: [
-  { id: 0, name: '人', color: '#ff6b6b' },
-  { id: 1, name: '车', color: '#4ecdc4' },
-  { id: 2, name: '动物', color: '#45b7d1' },
-  { id: 3, name: '建筑', color: '#96ceb4' },
-  { id: 4, name: '其他', color: '#feca57' }
+  { id: 0, name: 'Person', color: '#ff6b6b' },
+  { id: 1, name: 'Car', color: '#4ecdc4' },
+  { id: 2, name: 'Animal', color: '#45b7d1' },
+  { id: 3, name: 'Building', color: '#96ceb4' },
+  { id: 4, name: 'Other', color: '#feca57' }
 ]
 ```
 
-### API 配置
-Mock API 位于 `src/api/index.js`，包含：
-- `getImageList()`: 获取图片列表
-- `getAnnotations(imageId)`: 获取标注数据
-- `saveAnnotations(imageId, annotations)`: 保存标注数据
-- `uploadImage(file)`: 上传图片
-- `exportYOLO(imageIds)`: 导出 YOLO 格式
+### API Configuration
+Mock API is located in `src/api/index.js`, includes:
+- `getImageList()`: Get image list
+- `getAnnotations(imageId)`: Get annotation data
+- `saveAnnotations(imageId, annotations)`: Save annotation data
+- `uploadImage(file)`: Upload image
+- `exportYOLO(imageIds)`: Export YOLO format
 
-## 🔌 集成说明
+## 🔌 Integration Guide
 
-### 作为独立应用
-项目可以直接作为独立应用运行，通过 `npm run serve` 启动。
+### As Standalone Application
+The project can run directly as a standalone application with `npm run serve`.
 
-### 集成到主系统
-1. **组件化集成**: 将 `Annotation.vue` 组件导入到主系统
-2. **API 替换**: 将 Mock API 替换为真实后端接口
-3. **路由集成**: 将路由配置集成到主系统路由中
+### Integration into Main System
+1. **Component Integration**: Import `Annotation.vue` component into the main system
+2. **API Replacement**: Replace Mock API with real backend interfaces
+3. **Router Integration**: Integrate route configuration into main system router
 
-### 接口预留
-所有 API 调用都通过 `src/api/index.js` 模块，替换时只需：
-1. 修改 API 基础配置
-2. 更新接口实现
-3. 保持数据格式一致
+### Interface Preparation
+All API calls go through `src/api/index.js` module. When replacing:
+1. Modify API base configuration
+2. Update interface implementation
+3. Keep data format consistent
 
-## 🛠️ 开发指南
+## 🛠️ Development Guide
 
-### 添加新类别
-1. 在 Vuex store 中添加类别定义
-2. 更新颜色配置
-3. 更新快捷键映射（如需要）
+### Adding New Categories
+1. Add category definition in Vuex store
+2. Update color configuration
+3. Update keyboard shortcut mapping (if needed)
 
-### 扩展标注功能
-1. 修改 `AnnotationCanvas.vue` 组件
-2. 更新数据结构
-3. 调整 YOLO 导出逻辑
+### Extending Annotation Features
+1. Modify `AnnotationCanvas.vue` component
+2. Update data structure
+3. Adjust YOLO export logic
 
-### 自定义样式
-- 全局样式：`src/styles/global.css`
-- 组件样式：各组件的 `<style>` 部分
-- 主题配置：`vue.config.js`
+### Custom Styling
+- Global styles: `src/styles/global.css`
+- Component styles: `<style>` sections in each component
+- Theme configuration: `vue.config.js`
 
-## 📝 API 文档
+## 📝 API Documentation
 
-### 图片管理
-- `GET /api/images` - 获取图片列表
-- `POST /api/images` - 上传图片
-- `DELETE /api/images/:id` - 删除图片
+### Image Management
+- `GET /api/images` - Get image list
+- `POST /api/images` - Upload image
+- `DELETE /api/images/:id` - Delete image
 
-### 标注管理
-- `GET /api/annotations/:imageId` - 获取图片标注
-- `POST /api/annotations/:imageId` - 保存标注数据
-- `POST /api/export/yolo` - 导出 YOLO 格式
+### Annotation Management
+- `GET /api/annotations/:imageId` - Get image annotations
+- `POST /api/annotations/:imageId` - Save annotation data
+- `POST /api/export/yolo` - Export YOLO format
 
-## 🤝 贡献指南
+## 🤝 Contributing
 
-1. Fork 本项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- [Vue.js](https://vuejs.org/) - 渐进式 JavaScript 框架
-- [Element UI](https://element.eleme.io/) - 优秀的 Vue 组件库
-
----
-
-## 📚 语言版本
-
-- [中文版本 (Chinese)](./README.md)
-- [English Version](./README-EN.md)
+- [Vue.js](https://vuejs.org/) - Progressive JavaScript Framework
+- [Element UI](https://element.eleme.io/) - Excellent Vue Component Library
 
 ---
 
-**开始您的 YOLO 标注之旅！** 🚀 
+## 📚 Language Versions
+
+- [中文版本 (Chinese)](./README-CN.md)
+- [English Version](./README.md) 
