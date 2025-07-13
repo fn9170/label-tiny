@@ -2,6 +2,10 @@
 
 一个基于 Vue2 的专业图像标注工具，专为 YOLO 格式数据标注而设计。
 
+## 🖼️ 效果展示
+
+![应用界面截图](./src/assets/1.png)
+
 ## 🌟 功能特性
 
 ### 核心功能
@@ -248,15 +252,13 @@ Mock API 位于 `src/api/index.js`，包含：
 
 - [Vue.js](https://vuejs.org/) - 渐进式 JavaScript 框架
 - [Element UI](https://element.eleme.io/) - 优秀的 Vue 组件库
-- [Vuex](https://vuex.vuejs.org/) - Vue 状态管理
-- [Vue Router](https://router.vuejs.org/) - Vue 路由管理
 
-## 📞 支持
+---
 
-如果您有任何问题或建议，请：
-1. 查看 [常见问题](docs/faq.md)
-2. 创建 [Issue](https://github.com/your-repo/issues)
-3. 联系开发团队
+## 📚 语言版本
+
+- [中文版本 (Chinese)](./README.md)
+- [English Version](./README-EN.md)
 
 ---
 
